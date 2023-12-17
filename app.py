@@ -34,8 +34,8 @@ def predict_mpg():
     horsepower = float(request.form['horsepower'])
     weight = float(request.form['weight'])
     age = float(request.form['age'])
-    japan = float(request.form.get('japan', 0))
-    usa = float(request.form.get('usa', 0))
+    japan = 1 if 'japan' in request.form else 0
+    usa = 1 if 'usa' in request.form else 0
 
     input_data = [cylinders, horsepower, weight, age, japan, usa]
     prediction = round(mpg_model.predict([input_data])[0], 2)
