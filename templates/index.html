@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Predictions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>ML Model Predictions</h1>
+    <h3>Please select a link below to predict the MPG of a vehicle or to predict whether a person may have Diabetes.</h3>
+    <h3>Fill out the corresponding linked forms to see the predicted results.</h3>
+        <ul>
+            <li><a href="{{ url_for('show_mpg_form') }}">MPG Prediction</a></li>
+            <li><a href="{{ url_for('show_diabetes_form') }}">Diabetes Prediction</a></li>
+        </ul>
+</body>
+</html>

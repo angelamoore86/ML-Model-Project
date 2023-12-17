@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPG Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>MPG Form</h1>
+    <form method="post" action="{{ url_for('predict_mpg') }}">
+        <label for="cylinders">Cylinders:</label>
+        <input type="number" name="cylinders" required>
+        <br>
+        <label for="horsepower">Horsepower:</label>
+        <input type="number" name="horsepower" required>
+        <br>
+        <label for="weight">Weight:</label>
+        <input type="number" name="weight" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" required>
+        <br>
+        <label for="japan">Japan:</label>
+        <input type="checkbox" name="japan">
+        <br>
+        <label for="usa">USA:</label>
+        <input type="checkbox" name="usa">
+        <br>
+        <input type="submit" value="Predict MPG">
+    </form>
+    <br>
+    <a href="{{url_for('home')}}">Return to Home Page</a>
+</body>
+</html>

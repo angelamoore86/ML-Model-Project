@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    {% if model_type == 'mpg' %}
+        <h4> MPG Prediction</h4>
+        <p>Predicted MPG: {{ prediction }}</p>
+    {% endif %}
+    {% if model_type == 'diabetes' %}
+        <h4>Diabetes Prediction:</h4>
+        {%  if prediction == 1 %}
+            <h4>Diabetes Predicted.</h4>
+        {%  elif prediction == 0 %}
+            <h4>Diabetes Not Predicted.</h4>
+        {%  endif %}
+    {% endif %}
+    <br>
+    <a href="{{url_for('home')}}">Return to Home Page</a>
+</body>
+</html>
